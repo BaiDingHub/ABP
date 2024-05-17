@@ -1,0 +1,1 @@
+CUDA_VISIBLE_DEVICES=0 python abp_generate.py --config parameter/abp_gen/lstm_sst.yaml --vGPU 0

@@ -1,0 +1,1 @@
+CUDA_VISIBLE_DEVICES=0 python abp_generate.py --config parameter/abp_gen/bert_imdb.yaml --vGPU 0

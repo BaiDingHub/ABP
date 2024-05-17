@@ -1,0 +1,1 @@
+CUDA_VISIBLE_DEVICES=2 python abp_generate.py --config parameter/abp_gen/bert_mr.yaml --vGPU 0

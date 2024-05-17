@@ -1,0 +1,33 @@
+{
+  GPU: {
+    use_gpu: True,             
+    device_id: [0],            
+  },
+
+  CONFIG: {
+      model_name: 'Bert',       
+      attack_name: 'ABP',      
+  },
+
+  AdvDataset: {
+      dataset_path: './data/dataset/imdb/imdb',       
+  },
+
+  Bert: {
+      pretrained_dir: './data/model/bert/imdb',
+      nclasses: 2,
+      max_seq_length: 256,
+      batch_size: 32,
+  },
+
+  ABP: {
+      synonym_num: 30,                  # Synonym number
+      embedding_path: './data/aux_files/counter-fitted-vectors.txt',               # The path to the counter-fitting embeddings we used to find synonyms
+      cos_path: './data/aux_files/mat.txt',                    # The pre-compute the cosine similarity scores based on the counter-fitting embeddings
+      DEFAULT_ATTACK: 'pwws',           # Attack method for generation of ABP
+      wordnet_dir: 'bert-imdb',            # Output dir for saving the resulting weights
+      METHOD: 'free',                  # pick the method (i.e. 'free' or 'guide' for ABP_free and ABP_guide, respectively)
+      max_perturbed_percent: 0.25,      # the max perturbation percent of ABP_free
+      sample_num: 10000                 # sample number
+  }
+}

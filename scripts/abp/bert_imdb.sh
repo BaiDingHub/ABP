@@ -1,0 +1,1 @@
+CUDA_VISIBLE_DEVICES=0 python attack.py --config parameter/abp/bert_imdb.yaml --vGPU 0

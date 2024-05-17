@@ -1,0 +1,34 @@
+{
+  GPU: {
+    use_gpu: True,             
+    device_id: [0],            
+  },
+
+  CONFIG: {
+      model_name: 'WordLSTM',       
+      attack_name: 'ABP',      
+  },
+
+  AdvDataset: {
+      dataset_path: './data/dataset/sst/sst',       
+  },
+
+  WordLSTM : {
+      embedding_path : './data/embedding/glove.6B.200d.txt', 
+      nclasses : 2,                       
+      batch_size : 32,                  
+      target_model_path : './data/model/WordLSTM/sst',
+      max_seq_length: 256,
+  },
+
+  ABP: {
+      synonym_num: 30,                  # Synonym number
+      embedding_path: './data/aux_files/counter-fitted-vectors.txt',               # The path to the counter-fitting embeddings we used to find synonyms
+      cos_path: './data/aux_files/mat.txt',                    # The pre-compute the cosine similarity scores based on the counter-fitting embeddings
+      DEFAULT_ATTACK: 'pwws',           # Attack method for generation of ABP
+      wordnet_dir: 'lstm-sst',            # Output dir for saving the resulting weights
+      METHOD: 'free',                  # pick the method (i.e. 'free' or 'guide' for ABP_free and ABP_guide, respectively)
+      max_perturbed_percent: 0.25,      # the max perturbation percent of ABP_free
+      sample_num: 10000                 # sample number
+  }
+}
