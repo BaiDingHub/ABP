@@ -25,6 +25,8 @@ There are three datasets used in our experiments including `MR`, `SST`, `IMDB`.
 - `IMDB`: You can donwnload the `IMDB` dataset (i.e., `aclImdb_v1.tar.gz`) into the directory `./data/dataset/imdb` from [https://ai.stanford.edu/~amaas/data/sentiment/](https://ai.stanford.edu/~amaas/data/sentiment/).
 - `SST`: You can download the `SST` dataset (i.e., `SST-2.zip`) into the directory `./data/dataset/sst` from [https://dl.fbaipublicfiles.com/glue/data/SST-2.zip](https://dl.fbaipublicfiles.com/glue/data/SST-2.zip).
 
+Then please first run the `read_train_text` function in `traindata_loader.py` like `line 171` in `train_classifier.py`. Then you can get the dataset file for test and attack.
+
 
 ### Testset for Evaluating Various Attacks
 
